@@ -1,9 +1,10 @@
 const express = require('express');
 const app = express();
-const db = require('./models');
+const db = require('./models/db');
 const volleyball = require('volleyball');
 const bodyParser = require('body-parser');
 const nunjucks = require('nunjucks');
+const routes = require('./routes');
 
 app.use(volleyball);
 
@@ -15,11 +16,10 @@ app.set('view engine', 'html');
 app.engine('html', nunjucks.render);
 nunjucks.configure('views', { noCache: true });
 
-app.get('/', function(req, res, next) {
-    res.render('index');
-});
+app.use('/', routes);
 
 // add routes here
+
 
 app.use(function(req, res, next) {
     const err = new Error('That page doesn\'t exist!');

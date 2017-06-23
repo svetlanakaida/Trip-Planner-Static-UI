@@ -1,5 +1,5 @@
 // place.js
-var db = require('./db');
+const db = require('./db');
 var Sequelize = require('sequelize');
 var hotel = db.define('hotel', {
         name: {
@@ -7,7 +7,7 @@ var hotel = db.define('hotel', {
             allowNull: false
         },
         num_stars: {
-            type: Sequelize.STRING,
+            type: Sequelize.FLOAT(1, 5),
             allowNull: false,
         },
         amenities: {

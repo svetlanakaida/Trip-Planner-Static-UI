@@ -1,6 +1,6 @@
 // restaurant.js
 // place.js
-var db = require('./db');
+const db = require('./db');
 var Sequelize = require('sequelize');
 var restaurant = db.define('restaurant', {
         name: {
@@ -12,7 +12,7 @@ var restaurant = db.define('restaurant', {
             allowNull: false,
         },
         price: {
-            type: Sequelize.STRING,
+            type: Sequelize.INTEGER,
             allowNull: false
         }
     }

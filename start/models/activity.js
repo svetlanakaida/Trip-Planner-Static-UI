@@ -1,6 +1,7 @@
 // activity.js
-var db = require('./db');
+
 var Sequelize = require('sequelize');
+const db = require('./db');
 var activity = db.define('activity', {
         name: {
             type: Sequelize.STRING,

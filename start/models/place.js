@@ -1,5 +1,5 @@
 // place.js
-var db = require('./db');
+const db = require('./db');
 var Sequelize = require('sequelize');
 var place = db.define('place', {
         address: {
